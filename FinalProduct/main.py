@@ -297,8 +297,10 @@ def positionEstimator(cropped_eye):
 
     return eye_position, color 
 
+
+
 # creating pixel counter function 
-current_box = 1
+current_box = 0
 def pixelCounter(first_piece, second_piece, third_piece):
     # counting black pixel in each part 
     right_part = np.sum(first_piece==0)
@@ -312,8 +314,55 @@ def pixelCounter(first_piece, second_piece, third_piece):
     pos_eye ='' 
     if max_index==0:
         pos_eye="RIGHT"
-        print(f"Current BOx : {current_box}")
-        
+       
+        for current_key_id, current_key_data in keys_data.items():
+            if current_key_id == current_box:
+                Cindex = current_key_id - 1
+                if Cindex in keys_data:  # Check if Cindex exists
+                    # event loop
+                    for previous_key_id, previous_key_data in keys_data.items():
+                        if previous_key_id == Cindex and "label" in previous_key_data:
+                            if Cindex == 0:
+                                utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 1:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 2:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 3:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 4:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 5:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 6:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 7:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 8:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 9:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 10:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            elif Cindex == 11:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                            else:
+                                 utils.colorBackgroundText(keyboard, f'Default event for {Cindex}', FONTS, 0.7, (30, 90), 1, utils.WHITE, utils.YELLOW)
+                                 print(f"Default event: {previous_key_data['label']}")
+
+                
         color=[utils.BLACK, utils.GREEN]
     elif max_index==1:
         pos_eye = 'CENTER'
@@ -325,6 +374,7 @@ def pixelCounter(first_piece, second_piece, third_piece):
     else:
         pos_eye="Closed"
         color = [utils.GRAY, utils.YELLOW]
+        print("eye is closed")
     return pos_eye, color
 
 def highlight():
@@ -332,6 +382,8 @@ def highlight():
     for key_id, key_data in keys_data.items():
         if key_id == current_box:
             # Highlight the current box with red border
+            print(key_id)
+            print(current_box)
             letter(key_data['x'], key_data['y'], key_data['icon'], key_data['label'], key_id)
             cv.rectangle(keyboard, (key_data['x'], key_data['y']), 
                          (key_data['x'] + 160, key_data['y'] + 160), (0, 0, 255), 2)  # Red border
