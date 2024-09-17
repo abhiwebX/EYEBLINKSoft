@@ -1,4 +1,3 @@
-
 import cv2 as cv
 import mediapipe as mp
 import time
@@ -22,9 +21,17 @@ FONTS =cv.FONT_HERSHEY_COMPLEX
 # initialize mixer 
 mixer.init()
 # loading in the voices/sounds 
-voice_left = mixer.Sound('Voice/left.wav')
-voice_right = mixer.Sound('Voice/Right.wav')
-voice_center = mixer.Sound('Voice/center.wav')
+voice_eat = mixer.Sound('Voice/eat.wav')
+voice_tv = mixer.Sound('Voice/tv.wav')
+voice_water = mixer.Sound('Voice/water.wav')
+voice_sleep = mixer.Sound('Voice/sleep.wav')
+voice_book = mixer.Sound('Voice/book.wav')
+voice_dress = mixer.Sound('Voice/dress.wav')
+voice_call = mixer.Sound('Voice/Child.wav')
+voice_child = mixer.Sound('Voice/Child.wav')
+voice_toilet = mixer.Sound('Voice/toilet.wav')
+voice_music = mixer.Sound('Voice/music.wav')
+voice_emergency = mixer.Sound('Voice/tv.wav')
 
 # face bounder indices 
 FACE_OVAL=[ 10, 338, 297, 332, 284, 251, 389, 356, 454, 323, 361, 288, 397, 365, 379, 378, 400, 377, 152, 148, 176, 149, 150, 136, 172, 58, 132, 93, 234, 127, 162, 21, 54, 103,67, 109]
@@ -328,36 +335,52 @@ def pixelCounter(first_piece, second_piece, third_piece):
                             elif Cindex == 1:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_eat.play()
+                                 
                             elif Cindex == 2:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_water.play()
                             elif Cindex == 3:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_toilet.play()
                             elif Cindex == 4:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 
                             elif Cindex == 5:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_tv.play()
                             elif Cindex == 6:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_music.play()
                             elif Cindex == 7:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_call.play()
                             elif Cindex == 8:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_dress.play()
                             elif Cindex == 9:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_child.play()
                             elif Cindex == 10:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_book.play()
                             elif Cindex == 11:
                                  utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
                                  print(f"Current Name: {previous_key_data['label']}")
+                                 voice_emergency.play()
+                            elif Cindex == 12:
+                                 utils.colorBackgroundText(keyboard, f'Event is: {previous_key_data["label"]}', FONTS, 0.7, (30,90), 1, utils.PINK, utils.YELLOW)
+                                 print(f"Current Name: {previous_key_data['label']}")
+                                 ### exit method here
                             else:
                                  utils.colorBackgroundText(keyboard, f'Default event for {Cindex}', FONTS, 0.7, (30, 90), 1, utils.WHITE, utils.YELLOW)
                                  print(f"Default event: {previous_key_data['label']}")
