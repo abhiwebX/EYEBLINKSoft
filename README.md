@@ -10,5 +10,5 @@ we studied the concept's of facial landmarks and eye position radion and with th
 after that we use openCV for designing the frontevent of application
 
 # This is the output of the Project
-https://github.com/user-attachments/assets/3f8551a4-d276-4066-ad6d-dc61aca5ce24
+https://github.com/user-attachments/assets/3f8551a4-d276-4066-ad6d-dc61aca5ce24.
 
