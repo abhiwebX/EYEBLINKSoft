@@ -9,6 +9,5 @@ In this project use study the eye blink and various pattern's of eye . Based on 
 we studied the concept's of facial landmarks and eye position radion and with the help of metapolar library .
 after that we use openCV for designing the frontevent of application
 
-# This is the output of the Project
-https://github.com/user-attachments/assets/3f8551a4-d276-4066-ad6d-dc61aca5ce24.
+
 
