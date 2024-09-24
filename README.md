@@ -1,3 +1,5 @@
+
+
 # EYEBLINKSoft
 Project Name : Eye Blink Software based on Aritifical Intelligency !
 
@@ -9,5 +11,8 @@ In this project use study the eye blink and various pattern's of eye . Based on 
 we studied the concept's of facial landmarks and eye position radion and with the help of metapolar library .
 after that we use openCV for designing the frontevent of application
 
-
+Library and Package installation step
+step 1 go to main.py 
+step 2 open new terminal
+step 3 enter the following command pip install -r requirements.txt
 
