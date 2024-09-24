@@ -6,6 +6,9 @@ import numpy as np
 import pygame 
 from pygame import mixer 
 
+## open terminal and write following command on it to install all packages
+## pip install -r requirements.txt
+
 # variables 
 frame_counter =0
 CEF_COUNTER =0
